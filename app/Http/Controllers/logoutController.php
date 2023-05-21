@@ -4,8 +4,12 @@ namespace App\Http\Controllers;
 
 class logoutController extends Controller
 {
-    public function index()
+    public function logout()
     {
+
+         auth()->logout();
+
+         return redirect('login');
 
     }
 }
