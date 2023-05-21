@@ -1,32 +1,11 @@
 <?php
 
+namespace App\Http\Controllers;
 
-use App\Models\User;
-use Illuminate\Contracts\Foundation\Application;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Routing\Redirector;
-
-class LogoutController
-
-
+class logoutController extends Controller
 {
-
-
-    /**
-     * @param Request $request
-     * @return Application|\Illuminate\Foundation\Application|RedirectResponse|Redirector
-     */
-    public function logout(Request $request)
+    public function index()
     {
 
-        $user = User::where('email' , $request->email)->first()->where('password' , $request->password);
-
-
-        Auth::logout($user);
-
-
-        return redirect('/login');
     }
-
-
 }

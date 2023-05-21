@@ -27,7 +27,7 @@
 
 
                 </div>
-                <div class="flex justify-start">
+                <div class="">
 
 
 
