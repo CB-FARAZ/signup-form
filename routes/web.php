@@ -32,4 +32,10 @@ Route::get('/register', [RegisterController::class, 'index']);
 Route::post('/register/process', [RegisterController::class, 'register'])->name('register.process');
 
 
+//logout
+
+Route::post('/logout', [LogoutController::class , 'logout'])->name('logout');
+
+
+
 

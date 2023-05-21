@@ -24,7 +24,20 @@
                         <a href="#" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium">Projects</a>
                         <a href="#" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium">Calendar</a>
                     </div>
+
+
                 </div>
+                <div class="flex justify-start">
+
+
+
+                    <form method="POST" action="{{ route('logout') }}" class="mt-2">
+                        @csrf
+                        <button type="submit" class=" mx-12 border-2 rounded-xl px-4 py-2 hover:bg-blue-600" >Logout</button>
+                    </form>
+
+                </div>
+
                 <div class="hidden sm:ml-6 sm:flex sm:items-center">
                     <button type="button" class="rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
                         <span class="sr-only">View notifications</span>
@@ -47,6 +60,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
                         </svg>
                     </button>
+
                 </div>
             </div>
         </div>
@@ -74,6 +88,7 @@
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
                         </svg>
+
                     </button>
                 </div>
                 <div class="mt-3 space-y-1">
@@ -103,7 +118,7 @@
                         </svg>
                     </div>
                     <div class="ml-3">
-                        <p class="text-sm font-medium text-green-800">{{  session()->get('success')}}</p>
+                        <p class="text-md font-medium text-green-800">{{  session()->get('success')}}</p>
                     </div>
                     <div class="ml-auto pl-3">
                         <div class="-mx-1.5 -my-1.5">
@@ -121,9 +136,8 @@
 
 
 
-            <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-                <!-- Your content -->
-            </div>
+
+
         </main>
     </div>
 </div>

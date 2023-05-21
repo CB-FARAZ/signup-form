@@ -48,7 +48,7 @@ class LoginController extends Controller
 
         $user = User::where('email', $attributes['email'])->first();
 
-        if (!$user && !Hash::check($attributes['password'], $user->password)) {
+        if (!$user || !Hash::check($attributes['password'], $user->password)) {
 
             return redirect()->back()->withErrors('Provided credentials do not match');
         }
