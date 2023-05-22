@@ -50,7 +50,7 @@ class LoginController extends Controller
 
         if (!$user || !Hash::check($attributes['password'], $user->password)) {
 
-            return redirect()->back()->withErrors('Provided credentials do not match');
+            return redirect()->back()->withErrors('These credentials do not match our records.');
         }
 
         auth()->login($user);

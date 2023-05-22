@@ -20,7 +20,7 @@ Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login/process', [LoginController::class, 'authenticateLoginRequest'])->name('login.process');
 
 // Home page route
-Route::get('/home', [HomeController::class, 'index'])->name('home.index');
+Route::get('/home', [HomeController::class, 'index'])->name('home.index')->middleware('auth');
 
 
 //Register User
@@ -36,6 +36,7 @@ Route::post('/register/process', [RegisterController::class, 'register'])->name(
 //logout
 
 Route::post('/logout', [logoutController::class , 'logout'])->name('logout');
+
 
 
 

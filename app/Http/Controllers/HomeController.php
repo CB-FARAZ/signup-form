@@ -10,6 +10,6 @@ class HomeController extends Controller
     {
 
         return view('home');
-        return 'hey from home ;)';
+
     }
 }
