@@ -24,6 +24,7 @@
             method="POST"
             action="{{ route('register.process') }}">
             @csrf
+
             <div>
                 <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
                 <div class="mt-2">

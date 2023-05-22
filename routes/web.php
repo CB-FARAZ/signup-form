@@ -20,7 +20,9 @@ Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login/process', [LoginController::class, 'authenticateLoginRequest'])->name('login.process');
 
 // Home page route
-Route::get('/home', [HomeController::class, 'index'])->name('home.index')->middleware('auth');
+Route::get('/home{id}', [HomeController::class, 'index'])->name('home.laravel')->middleware(\App\Http\Middleware\AuthenticateMiddleware::class);
+
+
 
 
 //Register User
@@ -39,5 +41,77 @@ Route::post('/logout', [logoutController::class , 'logout'])->name('logout');
 
 
 
+//403 status
 
+Route::get('/home', function () {
+    return view('components.403');
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Route::group(['middleware' => 'auth'] , function (){
+//
+//    Route::group([
+//        'middleware' => 'user',
+//        'prefix' => 'user',
+//        'namespace' => 'user',
+//        'as' => 'user'
+//
+//    ] , function () {
+//
+//        Route::resource('users', 'loginController');
+//        Route::resource('projects', 'RegisterController');
+//
+//
+//    });
+//
+//    Route::group([
+//
+//        'middleware' => 'admin',
+//        'prefix' => 'admin',
+//        'namespace' => 'admin',
+//        'as' => 'admin'
+//
+//    });
+//
+//
+//
+//});
 

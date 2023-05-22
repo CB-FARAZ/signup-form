@@ -37,7 +37,8 @@ class LoginController extends Controller
         // Read: https://laravel.com/docs/10.x/validation
        $attributes =  $request->validate([
             'email' => 'required|max:50',
-            'password' => 'required',
+            'password' => 'required|max:8',
+
         ]);
 
         // it came here only if the request is validated
@@ -57,7 +58,7 @@ class LoginController extends Controller
 
         Session::flash('success', 'User has been logged in successfully');
 
-        return redirect()->route('home.index');
+        return redirect()->route('home.laravel' , 'id');
     }
 
 
