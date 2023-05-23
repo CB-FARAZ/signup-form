@@ -2,6 +2,7 @@
 
 namespace App\Exceptions;
 
+use http\Exception\InvalidArgumentException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
 

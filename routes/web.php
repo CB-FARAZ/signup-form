@@ -4,12 +4,12 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\logoutController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Middleware\AuthenticateMiddleware;
 use Illuminate\Support\Facades\Route;
 
 
 // Welcome route
 Route::get('/', fn(Request $request) => view('welcome'));
-
 
 // Login route
 Route::get('/login', [LoginController::class, 'index']);
@@ -18,20 +18,16 @@ Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login/process', [LoginController::class, 'authenticateLoginRequest'])->name('login.process');
 
 // Home page route
-Route::get('/home', [HomeController::class, 'index'])->name('home.laravel')->middleware(\App\Http\Middleware\AuthenticateMiddleware::class);
 
-
-
+Route::get('/home', [HomeController::class, 'index'])->name('home.laravel')->middleware(AuthenticateMiddleware::class);
 
 //Register User
 
 Route::get('/register', [RegisterController::class, 'index']);
 
-
 //Register authentication User
 
 Route::post('/register/process', [RegisterController::class, 'register'])->name('register.process');
-
 
 //logout
 
