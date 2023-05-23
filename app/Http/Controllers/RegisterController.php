@@ -33,21 +33,24 @@ class RegisterController extends Controller
     {
         $attributes = $request->validate([
 
+
+            'name' => 'required|max:20',
             'email' => 'required|max:50',
             'password' => 'required|min:8',
         ]);
 
         $user = User::create([
+            'name' => $attributes['name'],
             'email' => $attributes['email'],
             'password' => Hash::make($attributes['password']),
-            ''
+
         ]);
 
         auth()->login($user);
 
         Session::flash('success', 'User has been created successfully');
 
-        return redirect()->route('home.laravel' , 'id');
+        return redirect()->route('home.laravel');
     }
 
 

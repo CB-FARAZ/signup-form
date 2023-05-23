@@ -8,10 +8,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
 </head>
-<body>
+<body class="bg-gray-500">
 
 
-<h1 class="mt-12 text-center text-5xl font-semibold ">
+<h1 class="mt-12 text-center text-5xl font-semibold underline " style="font-family: 'HoloLens MDL2 Assets',serif;">
 
     Register Form
 
@@ -23,9 +23,9 @@
 
 
 
-    <button class=" mx-12 border-2 rounded-xl px-4 py-2 hover:bg-blue-600">
+    <button class=" mx-12 border border-black rounded-xl px-4 py-2 hover:bg-blue-600">
 
-        <a href="login">
+        <a href="{{ 'login' }}">
 
             Login
 
@@ -34,9 +34,9 @@
 
     </button>
 
-    <button class=" mx-12 border-2 rounded-xl px-4 py-2 hover:bg-blue-600">
+    <button class=" mx-12 border border-black rounded-xl px-3 py-2 hover:bg-blue-600">
 
-     <a href="register">
+     <a href="{{ 'register' }}">
 
 
          Register

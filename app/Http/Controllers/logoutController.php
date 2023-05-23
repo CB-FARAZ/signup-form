@@ -7,9 +7,10 @@ class logoutController extends Controller
     public function logout()
     {
 
-         auth()->logout();
+          auth()->logout();
 
-         return redirect('login');
+          return redirect('/');
 
     }
+
 }

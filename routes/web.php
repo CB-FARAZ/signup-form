@@ -8,9 +8,7 @@ use Illuminate\Support\Facades\Route;
 
 
 // Welcome route
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', fn(Request $request) => view('welcome'));
 
 
 // Login route
@@ -20,7 +18,7 @@ Route::get('/login', [LoginController::class, 'index']);
 Route::post('/login/process', [LoginController::class, 'authenticateLoginRequest'])->name('login.process');
 
 // Home page route
-Route::get('/home{id}', [HomeController::class, 'index'])->name('home.laravel')->middleware(\App\Http\Middleware\AuthenticateMiddleware::class);
+Route::get('/home', [HomeController::class, 'index'])->name('home.laravel')->middleware(\App\Http\Middleware\AuthenticateMiddleware::class);
 
 
 
@@ -41,11 +39,6 @@ Route::post('/logout', [logoutController::class , 'logout'])->name('logout');
 
 
 
-//403 status
-
-Route::get('/home', function () {
-    return view('components.403');
-});
 
 
 
