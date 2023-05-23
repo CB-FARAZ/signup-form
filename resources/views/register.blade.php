@@ -35,17 +35,7 @@
                 </div>
             </div>
 
-            @error('name')
 
-            <div class=" text-xs text-red-500">
-
-                <ul>
-                    {{ $message}}
-                </ul>
-            </div>
-
-
-            @enderror
 
             <div>
                 <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
@@ -56,15 +46,7 @@
                 </div>
             </div>
 
-            @error('email')
-            <div class=" text-xs text-red-500">
 
-                <ul>
-                    {{ $message}}
-                </ul>
-            </div>
-
-            @enderror
 
 
             <div>
@@ -76,25 +58,32 @@
                 </div>
             </div>
 
-            @error('password')
-            <div class=" text-xs text-red-500">
 
-                <ul>
-                    {{ $message}}
-                </ul>
-            </div>
-            @enderror
 
 
             <div>
                 <button type="submit"
-                        class=" flex max-w-24 mx-auto  rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                        class=" flex w-full justify-center   rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
                     Sign in
                 </button>
             </div>
         </form>
 
-{{--        @foreach ($errors->all() as $message)--}}
+
+
+
+        @if ($errors->any())
+
+            @foreach ($errors->all() as $error)
+
+                <div class="mt-4 text-sm text-red-500">{{$error}}</div>
+
+            @endforeach
+
+        @endif
+
+
+        {{--        @foreach ($errors->all() as $message)--}}
 
 {{--            <br>--}}
 {{--            <div class="rounded-md bg-red-50 ">--}}
