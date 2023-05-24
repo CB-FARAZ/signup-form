@@ -48,9 +48,7 @@ class RegisterController extends Controller
 
         auth()->login($user);
 
-        Session::flash('success', 'User has been created successfully');
-
-        return redirect()->route('home.laravel');
+        return redirect()->route('main');
     }
 
 

@@ -6,6 +6,7 @@ use App\Models\User;
 use Hash;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 
@@ -36,10 +37,14 @@ class LoginController extends Controller
 
         // Validate input fields
         // Read: https://laravel.com/docs/10.x/validation
+
         $attributes = $request->validate([
-            'name' => 'required|max:50',
-            'email' => 'required|max:50',
-            'password' => 'required|max:8',
+
+              'name' => 'bail|required|max:50',
+
+             'email' => 'required|max:50',
+
+            'password' => 'required|max:10',
 
         ]);
 
@@ -53,20 +58,30 @@ class LoginController extends Controller
 
         if (!$user || !Hash::check($attributes['password'], $user->password)) {
 
-            return redirect()->back()->withErrors('These credentials do not match our records.');
+            return redirect()->back()
+                             ->withErrors('These credentials do not match our records.')
+                             ->withInput(
+                     $request->except('password')
+
+            );
         }
 
 
         auth()->login($user);
 
-        Session::flash('success', 'User has been logged in successfully');
 
-        return redirect()->route('home.laravel');
+        return redirect()->route('main');
 
     }
 
 
+
+
+
 }
+
+
+
 
 
 

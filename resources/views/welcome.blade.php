@@ -8,7 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
 </head>
-<body class="bg-gray-500">
+<body class="">
 
 
 <h1 class="mt-12 text-center text-5xl font-semibold underline " style="font-family: 'HoloLens MDL2 Assets',serif;">
@@ -50,5 +50,15 @@
 
 
 
+
+
+
+
 </body>
 </html>
+
+
+
+
+
+
