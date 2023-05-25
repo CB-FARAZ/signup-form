@@ -51,26 +51,7 @@
                         </span>
 
 
-                        <span class="self-center whitespace-nowrap">
 
-
-
-
-
-
-                            @auth
-
-                                @if(Cache::has('user-is-online-' . $user->id))
-                                    <span class="text-success">Online</span>
-                                @else
-                                    <span class="text-secondary">Offline</span>
-                                @endif
-
-
-                            @endauth
-
-
-                        </span>
                     </a>
                     <form action="#" method="GET" class="hidden lg:block lg:pl-32">
                         <label for="topbar-search" class="sr-only">Search</label>

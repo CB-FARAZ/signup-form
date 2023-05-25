@@ -34,7 +34,7 @@ class RegisterController extends Controller
         $attributes = $request->validate([
 
 
-            'name' => 'required|max:20',
+            'name' => 'alpha_dash:ascii|max:20',
             'email' => 'required|max:50',
             'password' => 'required|min:8',
         ]);

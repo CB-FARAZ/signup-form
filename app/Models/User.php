@@ -12,8 +12,7 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-
-
+    public string $status;
 
 
     /**
@@ -25,7 +24,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'last_seen',
+        'status',
     ];
 
     /**
@@ -47,9 +46,6 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
-
-
-
 
 
 

@@ -29,7 +29,10 @@
             <div>
                 <label for="name" class="block text-sm font-medium leading-6 text-gray-900">Username</label>
                 <div class="mt-2">
-                    <input id="name" name="name" type="text" autocomplete="name"
+                    <input id="name"
+                           name="name"
+                           type="text"
+                           autocomplete="name"
                            class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                            value="{{ old('name') }}">
                 </div>
@@ -40,8 +43,11 @@
             <div>
                 <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
                 <div class="mt-2">
-                    <input id="email" name="email" type="email" autocomplete="email"
-                           class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    <input id="email"
+                           name="email"
+                           type="email"
+                           autocomplete="email"
+                           class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gplaceholder:text-gray-400           focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                            value="{{ old('email') }}">
                 </div>
             </div>
@@ -50,10 +56,14 @@
 
 
             <div>
-                <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
                 <div class="mt-2">
-                    <label for="password"></label><input id="password" name="password" type="password" autocomplete="password"
-                                                         class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    <label for="password" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
+
+                   <input id="password"
+                          name="password"
+                          type="password"
+                          autocomplete="password"
+                          class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     >
                 </div>
             </div>
@@ -81,6 +91,9 @@
             @endforeach
 
         @endif
+
+
+
 
     </div>
 </div>

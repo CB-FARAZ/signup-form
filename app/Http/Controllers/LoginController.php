@@ -4,11 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Hash;
+
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
 {
@@ -40,7 +38,7 @@ class LoginController extends Controller
 
         $attributes = $request->validate([
 
-              'name' => 'bail|required|max:50',
+              'name' => 'required|max:50',
 
              'email' => 'required|max:50',
 
@@ -66,13 +64,24 @@ class LoginController extends Controller
             );
         }
 
+        User::where('email' , $request->email)->update([
+            'status' => 'active'
+
+        ]);
+
 
         auth()->login($user);
+
+
+
+
 
 
         return redirect()->route('main');
 
     }
+
+
 
 
 

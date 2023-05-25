@@ -2,22 +2,27 @@
 
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\logoutController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 
-// Welcome route
+ //Welcome route
+
 Route::get('/', fn(Request $request) => view('welcome'));
+
+//Dashboard Route
 
 Route::get('view' , fn() => view('view'))->name('main');
 
 // Login route
+
 Route::get('/login', [LoginController::class, 'index']);
 
 // Login authentication route
-Route::post('/login/process', [LoginController::class, 'authenticateLoginRequest'])->name('login.process');
 
+Route::post('/login/process', [LoginController::class, 'authenticateLoginRequest'])->name('login.process');
 
 //Register User
 
@@ -32,7 +37,6 @@ Route::post('/register/process', [RegisterController::class, 'register'])->name(
 Route::post('/logout', [logoutController::class , 'logout'])->name('logout');
 
 
-Route::get('status', [UserController::class, 'userOnlineStatus'])->name('users.index');
 
 
 
