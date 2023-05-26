@@ -20,6 +20,7 @@ return new class extends Migration
             $table->rememberToken();
             $table->timestamps();
             $table->string('status')->nullable();
+            $table->timestamp('last_login_at')->nullable();
         });
     }
 

@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use Carbon\Carbon;
 use Hash;
 
+use Illuminate\Auth\Events\Login;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
@@ -19,6 +21,10 @@ class LoginController extends Controller
         return view('login');
 
     }
+
+
+
+
 
 
     /**
@@ -69,8 +75,18 @@ class LoginController extends Controller
 
         ]);
 
+        User::where('email', $request->email)->update([
 
-        auth()->login($user);
+            'last_login_at' => Carbon::now()
+
+        ]);
+
+
+
+
+
+        auth()->login($user , $remember = true);
+
 
 
 
@@ -80,6 +96,17 @@ class LoginController extends Controller
         return redirect()->route('main');
 
     }
+
+
+//
+//        $event->user->update([
+//
+//            'last_login_at' => Carbon::tomorrow()
+//
+//        ]);
+
+
+
 
 
 

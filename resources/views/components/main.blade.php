@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 <body>
 
@@ -49,6 +50,31 @@
 
 
                         </span>
+
+
+
+                        <span class="self-center whitespace-nowrap">
+
+
+                           @auth
+
+                                <div>
+                                    <br>
+
+                                  Last login , {{ Carbon\Carbon::parse(auth()->user()->last_login_at)->diffForHumans() }}
+
+                               </div>
+
+                            @endauth
+
+
+                        </span>
+
+{{--                        <div>--}}
+
+{{--                        {{ Carbon\Carbon::parse(auth()->user()->last_login_at)->diffForHumans() }}--}}
+
+{{--                        </div>--}}
 
 
 
@@ -114,7 +140,7 @@
                                 </form>
                             </li>
                             <li>
-                                <a href="#"
+                                <a href="{{ route('main') }}"
                                    class="text-base text-gray-900 font-normal rounded-lg flex items-center p-2 hover:bg-gray-100 group">
                                     <svg class="w-6 h-6 text-gray-500 group-hover:text-gray-900 transition duration-75"
                                          fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -125,15 +151,15 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="/users"
-                                   class="text-base text-gray-900 font-normal rounded-lg flex items-center p-2 hover:bg-gray-100 group">
-                                    <svg class="w-6 h-6 text-gray-500 group-hover:text-gray-900 transition duration-75"
-                                         fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
-                                        <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
-                                    </svg>
-                                    <span class="ml-3">Users</span>
-                                </a>
+{{--                                <a href=""--}}
+{{--                                   class="text-base text-gray-900 font-normal rounded-lg flex items-center p-2 hover:bg-gray-100 group">--}}
+{{--                                    <svg class="w-6 h-6 text-gray-500 group-hover:text-gray-900 transition duration-75"--}}
+{{--                                         fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">--}}
+{{--                                        <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>--}}
+{{--                                        <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>--}}
+{{--                                    </svg>--}}
+{{--                                    <span class="ml-3">Users</span>--}}
+{{--                                </a>--}}
                             </li>
 
                         </ul>
@@ -285,7 +311,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="mt-4 w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+
+
+            <div class="mt-4 w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
                         <div class="bg-white shadow rounded-lg p-4 sm:p-6 xl:p-8 ">
                             <div class="flex items-center">
                                 <div class="flex-shrink-0">
@@ -344,122 +372,122 @@
                     <div class="grid grid-cols-1 2xl:grid-cols-2 xl:gap-4 my-4">
                         <div class="bg-white shadow rounded-lg mb-4 p-4 sm:p-6 h-full">
                             <div class="flex items-center justify-between mb-4">
-                                <h3 class="text-xl font-bold leading-none text-gray-900">Latest Customers</h3>
-                                <a href="#"
+                                <h3 class="text-xl font-bold leading-none text-gray-900">Customers Count</h3>
+                                <a href="{{ route('show') }}"
                                    class="text-sm font-medium text-cyan-600 hover:bg-gray-100 rounded-lg inline-flex items-center p-2">
                                     View all
                                 </a>
                             </div>
-                            <div class="flow-root">
-                                <ul role="list" class="divide-y divide-gray-200">
-                                    <li class="py-3 sm:py-4">
-                                        <div class="flex items-center space-x-4">
-                                            <div class="flex-shrink-0">
-                                                <img class="h-8 w-8 rounded-full"
-                                                     src="https://demo.themesberg.com/windster/images/users/neil-sims.png"
-                                                     alt="Neil image">
-                                            </div>
-                                            <div class="flex-1 min-w-0">
-                                                <p class="text-sm font-medium text-gray-900 truncate">
-                                                    Neil Sims
-                                                </p>
-                                                <p class="text-sm text-gray-500 truncate">
-                                                    <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
-                                                       data-cfemail="17727a767e7b57607e7973646372653974787a">[email&#160;protected]</a>
-                                                </p>
-                                            </div>
-                                            <div class="inline-flex items-center text-base font-semibold text-gray-900">
-                                                $320
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="py-3 sm:py-4">
-                                        <div class="flex items-center space-x-4">
-                                            <div class="flex-shrink-0">
-                                                <img class="h-8 w-8 rounded-full"
-                                                     src="https://demo.themesberg.com/windster/images/users/bonnie-green.png"
-                                                     alt="Neil image">
-                                            </div>
-                                            <div class="flex-1 min-w-0">
-                                                <p class="text-sm font-medium text-gray-900 truncate">
-                                                    Bonnie Green
-                                                </p>
-                                                <p class="text-sm text-gray-500 truncate">
-                                                    <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
-                                                       data-cfemail="d4b1b9b5bdb894a3bdbab0a7a0b1a6fab7bbb9">[email&#160;protected]</a>
-                                                </p>
-                                            </div>
-                                            <div class="inline-flex items-center text-base font-semibold text-gray-900">
-                                                $3467
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="py-3 sm:py-4">
-                                        <div class="flex items-center space-x-4">
-                                            <div class="flex-shrink-0">
-                                                <img class="h-8 w-8 rounded-full"
-                                                     src="https://demo.themesberg.com/windster/images/users/michael-gough.png"
-                                                     alt="Neil image">
-                                            </div>
-                                            <div class="flex-1 min-w-0">
-                                                <p class="text-sm font-medium text-gray-900 truncate">
-                                                    Michael Gough
-                                                </p>
-                                                <p class="text-sm text-gray-500 truncate">
-                                                    <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
-                                                       data-cfemail="57323a363e3b17203e3933242332257934383a">[email&#160;protected]</a>
-                                                </p>
-                                            </div>
-                                            <div class="inline-flex items-center text-base font-semibold text-gray-900">
-                                                $67
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="py-3 sm:py-4">
-                                        <div class="flex items-center space-x-4">
-                                            <div class="flex-shrink-0">
-                                                <img class="h-8 w-8 rounded-full"
-                                                     src="https://demo.themesberg.com/windster/images/users/thomas-lean.png"
-                                                     alt="Neil image">
-                                            </div>
-                                            <div class="flex-1 min-w-0">
-                                                <p class="text-sm font-medium text-gray-900 truncate">
-                                                    Thomes Lean
-                                                </p>
-                                                <p class="text-sm text-gray-500 truncate">
-                                                    <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
-                                                       data-cfemail="284d45494144685f41464c5b5c4d5a064b4745">[email&#160;protected]</a>
-                                                </p>
-                                            </div>
-                                            <div class="inline-flex items-center text-base font-semibold text-gray-900">
-                                                $2367
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="pt-3 sm:pt-4 pb-0">
-                                        <div class="flex items-center space-x-4">
-                                            <div class="flex-shrink-0">
-                                                <img class="h-8 w-8 rounded-full"
-                                                     src="https://demo.themesberg.com/windster/images/users/lana-byrd.png"
-                                                     alt="Neil image">
-                                            </div>
-                                            <div class="flex-1 min-w-0">
-                                                <p class="text-sm font-medium text-gray-900 truncate">
-                                                    Lana Byrd
-                                                </p>
-                                                <p class="text-sm text-gray-500 truncate">
-                                                    <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
-                                                       data-cfemail="a2c7cfc3cbcee2d5cbccc6d1d6c7d08cc1cdcf">[email&#160;protected]</a>
-                                                </p>
-                                            </div>
-                                            <div class="inline-flex items-center text-base font-semibold text-gray-900">
-                                                $367
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+{{--                            <div class="flow-root">--}}
+{{--                                <ul role="list" class="divide-y divide-gray-200">--}}
+{{--                                    <li class="py-3 sm:py-4">--}}
+{{--                                        <div class="flex items-center space-x-4">--}}
+{{--                                            <div class="flex-shrink-0">--}}
+{{--                                                <img class="h-8 w-8 rounded-full"--}}
+{{--                                                     src="https://demo.themesberg.com/windster/images/users/neil-sims.png"--}}
+{{--                                                     alt="Neil image">--}}
+{{--                                            </div>--}}
+{{--                                            <div class="flex-1 min-w-0">--}}
+{{--                                                <p class="text-sm font-medium text-gray-900 truncate">--}}
+{{--                                                    Neil Sims--}}
+{{--                                                </p>--}}
+{{--                                                <p class="text-sm text-gray-500 truncate">--}}
+{{--                                                    <a href="/cdn-cgi/l/email-protection" class="__cf_email__"--}}
+{{--                                                       data-cfemail="17727a767e7b57607e7973646372653974787a">[email&#160;protected]</a>--}}
+{{--                                                </p>--}}
+{{--                                            </div>--}}
+{{--                                            <div class="inline-flex items-center text-base font-semibold text-gray-900">--}}
+{{--                                                $320--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </li>--}}
+{{--                                    <li class="py-3 sm:py-4">--}}
+{{--                                        <div class="flex items-center space-x-4">--}}
+{{--                                            <div class="flex-shrink-0">--}}
+{{--                                                <img class="h-8 w-8 rounded-full"--}}
+{{--                                                     src="https://demo.themesberg.com/windster/images/users/bonnie-green.png"--}}
+{{--                                                     alt="Neil image">--}}
+{{--                                            </div>--}}
+{{--                                            <div class="flex-1 min-w-0">--}}
+{{--                                                <p class="text-sm font-medium text-gray-900 truncate">--}}
+{{--                                                    Bonnie Green--}}
+{{--                                                </p>--}}
+{{--                                                <p class="text-sm text-gray-500 truncate">--}}
+{{--                                                    <a href="/cdn-cgi/l/email-protection" class="__cf_email__"--}}
+{{--                                                       data-cfemail="d4b1b9b5bdb894a3bdbab0a7a0b1a6fab7bbb9">[email&#160;protected]</a>--}}
+{{--                                                </p>--}}
+{{--                                            </div>--}}
+{{--                                            <div class="inline-flex items-center text-base font-semibold text-gray-900">--}}
+{{--                                                $3467--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </li>--}}
+{{--                                    <li class="py-3 sm:py-4">--}}
+{{--                                        <div class="flex items-center space-x-4">--}}
+{{--                                            <div class="flex-shrink-0">--}}
+{{--                                                <img class="h-8 w-8 rounded-full"--}}
+{{--                                                     src="https://demo.themesberg.com/windster/images/users/michael-gough.png"--}}
+{{--                                                     alt="Neil image">--}}
+{{--                                            </div>--}}
+{{--                                            <div class="flex-1 min-w-0">--}}
+{{--                                                <p class="text-sm font-medium text-gray-900 truncate">--}}
+{{--                                                    Michael Gough--}}
+{{--                                                </p>--}}
+{{--                                                <p class="text-sm text-gray-500 truncate">--}}
+{{--                                                    <a href="/cdn-cgi/l/email-protection" class="__cf_email__"--}}
+{{--                                                       data-cfemail="57323a363e3b17203e3933242332257934383a">[email&#160;protected]</a>--}}
+{{--                                                </p>--}}
+{{--                                            </div>--}}
+{{--                                            <div class="inline-flex items-center text-base font-semibold text-gray-900">--}}
+{{--                                                $67--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </li>--}}
+{{--                                    <li class="py-3 sm:py-4">--}}
+{{--                                        <div class="flex items-center space-x-4">--}}
+{{--                                            <div class="flex-shrink-0">--}}
+{{--                                                <img class="h-8 w-8 rounded-full"--}}
+{{--                                                     src="https://demo.themesberg.com/windster/images/users/thomas-lean.png"--}}
+{{--                                                     alt="Neil image">--}}
+{{--                                            </div>--}}
+{{--                                            <div class="flex-1 min-w-0">--}}
+{{--                                                <p class="text-sm font-medium text-gray-900 truncate">--}}
+{{--                                                    Thomes Lean--}}
+{{--                                                </p>--}}
+{{--                                                <p class="text-sm text-gray-500 truncate">--}}
+{{--                                                    <a href="/cdn-cgi/l/email-protection" class="__cf_email__"--}}
+{{--                                                       data-cfemail="284d45494144685f41464c5b5c4d5a064b4745">[email&#160;protected]</a>--}}
+{{--                                                </p>--}}
+{{--                                            </div>--}}
+{{--                                            <div class="inline-flex items-center text-base font-semibold text-gray-900">--}}
+{{--                                                $2367--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </li>--}}
+{{--                                    <li class="pt-3 sm:pt-4 pb-0">--}}
+{{--                                        <div class="flex items-center space-x-4">--}}
+{{--                                            <div class="flex-shrink-0">--}}
+{{--                                                <img class="h-8 w-8 rounded-full"--}}
+{{--                                                     src="https://demo.themesberg.com/windster/images/users/lana-byrd.png"--}}
+{{--                                                     alt="Neil image">--}}
+{{--                                            </div>--}}
+{{--                                            <div class="flex-1 min-w-0">--}}
+{{--                                                <p class="text-sm font-medium text-gray-900 truncate">--}}
+{{--                                                    Lana Byrd--}}
+{{--                                                </p>--}}
+{{--                                                <p class="text-sm text-gray-500 truncate">--}}
+{{--                                                    <a href="/cdn-cgi/l/email-protection" class="__cf_email__"--}}
+{{--                                                       data-cfemail="a2c7cfc3cbcee2d5cbccc6d1d6c7d08cc1cdcf">[email&#160;protected]</a>--}}
+{{--                                                </p>--}}
+{{--                                            </div>--}}
+{{--                                            <div class="inline-flex items-center text-base font-semibold text-gray-900">--}}
+{{--                                                $367--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </li>--}}
+{{--                                </ul>--}}
+{{--                            </div>--}}
+{{--                        </div>--}}
                         <div class="bg-white shadow rounded-lg p-4 sm:p-6 xl:p-8 ">
                             <h3 class="text-xl leading-none font-bold text-gray-900 mb-10">Acquisition Overview</h3>
                             <div class="block w-full overflow-x-auto">
@@ -595,6 +623,7 @@
                             </div>
                         </div>
                     </div>
+                </div>
                 </div>
             </main>
             <footer

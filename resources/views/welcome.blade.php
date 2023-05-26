@@ -8,22 +8,32 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
 </head>
-<body class="">
+<body class="bg-rose-200">
+
+<div class="-mb-20">
+
+    <a href="/" class="inline-flex items-center">
+
+     <img class="w-12 mx-2" src="https://laravel.com/img/logomark.min.svg" alt="">
+
+     <img src="https://laravel.com/img/logotype.min.svg" alt="">
 
 
-<h1 class="mt-12 text-center text-5xl font-semibold underline " style="font-family: 'HoloLens MDL2 Assets',serif;">
+    </a>
 
-    Register Form
-
-
-</h1>
-
-
-<div class="text-center text-xl mt-12">
+</div>
 
 
 
-    <button class=" mx-12 border border-black rounded-xl px-4 py-2 hover:bg-blue-600">
+
+
+
+
+<div class= " text-center text-xl mt-12 flex justify-end ">
+
+
+
+    <button class="text-red-600 underline ">
 
         <a href="{{ 'login' }}">
 
@@ -34,7 +44,7 @@
 
     </button>
 
-    <button class=" mx-12 border border-black rounded-xl px-3 py-2 hover:bg-blue-600">
+    <button class="text-red-600 mx-12 underline ">
 
      <a href="{{ 'register' }}">
 

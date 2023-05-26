@@ -2,9 +2,9 @@
 
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\logoutController;
-use App\Http\Controllers\ProfileController;
+
 use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\UserController;
+
 use Illuminate\Support\Facades\Route;
 
 
@@ -35,6 +35,20 @@ Route::post('/register/process', [RegisterController::class, 'register'])->name(
 //logout
 
 Route::post('/logout', [logoutController::class , 'logout'])->name('logout');
+
+
+//Users
+
+Route::get('/users' , [\App\Http\Controllers\UserController::class , 'index' , 'index'])->name('show');
+
+//Users Profile
+
+Route::view('users.profile' , 'subuser')->name('sub');
+
+//Restrict User to view other users
+
+Route::view('res' , 'restrict')->name('res');
+
 
 
 

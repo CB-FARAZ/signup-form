@@ -61,6 +61,28 @@
 
 
                 </div>
+                <br>
+
+                <div>
+
+                    <select>
+                        <option value="">Select</option>
+
+                        <option>
+
+                            Admin
+
+                        </option>
+
+                        <option>
+
+                         User
+
+                        </option>
+
+                    </select>
+
+                </div>
             </div>
 
 
